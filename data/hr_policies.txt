@@ -1,3 +1,19 @@
-leave policy: Employees are entitled to 12 casual leaves per year.
-salary date: Salary is credited on the 28th of every month.
-work from home: Employees can request WFH up to 2 days per week.
+leave policy: Employees are entitled to 12 casual leaves and 6 sick leaves per year.
+
+sick leaves: You can take up to 6 sick leaves per calendar year.
+
+working hours: Employees should work 8 hours per day between 9 AM and 6 PM with a 1-hour break.
+
+dress code: Formal attire from Monday to Thursday, casuals on Friday.
+
+maternity leave: Female employees can avail 6 months of maternity leave.
+
+paternity leave: Male employees can take 10 days of paternity leave.
+
+salary credit: Salary is credited on the last working day of every month.
+
+payroll issues: For any payroll issues, please contact hr@company.com.
+
+public holidays: There are 12 public holidays every year, including Republic Day, Independence Day, and Diwali.
+
+late coming: Employees arriving more than 15 minutes late thrice a month will receive a warning notice.
