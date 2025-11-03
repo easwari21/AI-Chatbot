@@ -1,32 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Employee Chatbot</title>
-    <style>
-        body { font-family: Arial; background: #eef2f3; text-align:center; }
-        #chatbox { width: 400px; margin: 40px auto; background: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 0 10px gray; }
-        .msg { text-align: left; margin: 10px 0; }
-        .bot { color: blue; }
-        .user { color: green; }
-    </style>
+  <title>Employee Chatbot</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div id="chatbox">
-        <h3>💬 Employee Chatbot</h3>
-        <div id="chat"></div>
-        <input type="text" id="message" placeholder="Type your question..." size="35">
-        <button onclick="send()">Send</button>
+  <div class="chat-container">
+    <div class="header">💬 Employee Helpdesk Chatbot</div>
+    <div id="chat-box" class="chat-box"></div>
+    <div class="input-area">
+      <input type="text" id="message" placeholder="Type your question..." />
+      <button onclick="send()">Send</button>
     </div>
-<script>
-async function send() {
-    const msg = document.getElementById("message").value;
-    if(!msg) return;
-    document.getElementById("chat").innerHTML += `<div class='msg user'><b>You:</b> ${msg}</div>`;
-    document.getElementById("message").value = "";
-    const res = await fetch("/ask", {method:"POST", body: new URLSearchParams({message:msg})});
-    const data = await res.json();
-    document.getElementById("chat").innerHTML += `<div class='msg bot'><b>Bot:</b> ${data.answer}</div>`;
-}
-</script>
+  </div>
+
+  <script>
+    async function send() {
+      const input = document.getElementById("message");
+      const msg = input.value.trim();
+      if (!msg) return;
+
+      const chatBox = document.getElementById("chat-box");
+      chatBox.innerHTML += `<div class="msg user"><span>${msg}</span></div>`;
+      input.value = "";
+
+      const res = await fetch("/ask", {
+        method: "POST",
+        body: new URLSearchParams({ message: msg }),
+      });
+      const data = await res.json();
+
+      chatBox.innerHTML += `<div class="msg bot"><span>${data.answer}</span></div>`;
+      chatBox.scrollTop = chatBox.scrollHeight; // auto-scroll
+    }
+  </script>
 </body>
 </html>

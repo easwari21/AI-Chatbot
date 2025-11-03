@@ -1,6 +1,6 @@
 import re
 
-BAD_WORDS = {"idiot", "stupid", "dumb"}
+BAD_WORDS = {"idiot", "stupid", "dumb", "fool"}
 
 def contains_bad_language(text):
     words = re.findall(r'\w+', text.lower())

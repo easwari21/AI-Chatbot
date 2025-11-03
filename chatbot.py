@@ -1,7 +1,5 @@
 import random
-import re
 
-# Load simple FAQs
 def load_data():
     files = ["data/hr_policies.txt", "data/it_support.txt", "data/company_events.txt"]
     data = {}
@@ -21,7 +19,7 @@ def get_response(user_input):
         if q in user_input:
             return a
     return random.choice([
-        "Sorry, I’m not sure about that. Please contact HR.",
-        "I’ll note this for the IT team.",
+        "I'm not sure about that. Please check with HR.",
+        "Let me check with the IT department.",
         "Can you please rephrase your question?"
     ])
