@@ -1,0 +1,3 @@
+forgot password: Please visit the IT Helpdesk portal to reset your password.
+wifi not working: Try reconnecting or contact the IT support team.
+email not opening: Check VPN connection or contact IT.

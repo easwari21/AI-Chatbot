@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Chatbot</title>
+    <style>
+        body { font-family: Arial; background: #eef2f3; text-align:center; }
+        #chatbox { width: 400px; margin: 40px auto; background: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 0 10px gray; }
+        .msg { text-align: left; margin: 10px 0; }
+        .bot { color: blue; }
+        .user { color: green; }
+    </style>
+</head>
+<body>
+    <div id="chatbox">
+        <h3>💬 Employee Chatbot</h3>
+        <div id="chat"></div>
+        <input type="text" id="message" placeholder="Type your question..." size="35">
+        <button onclick="send()">Send</button>
+    </div>
+<script>
+async function send() {
+    const msg = document.getElementById("message").value;
+    if(!msg) return;
+    document.getElementById("chat").innerHTML += `<div class='msg user'><b>You:</b> ${msg}</div>`;
+    document.getElementById("message").value = "";
+    const res = await fetch("/ask", {method:"POST", body: new URLSearchParams({message:msg})});
+    const data = await res.json();
+    document.getElementById("chat").innerHTML += `<div class='msg bot'><b>Bot:</b> ${data.answer}</div>`;
+}
+</script>
+</body>
+</html>

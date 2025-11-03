@@ -1,0 +1,3 @@
+leave policy: Employees are entitled to 12 casual leaves per year.
+salary date: Salary is credited on the 28th of every month.
+work from home: Employees can request WFH up to 2 days per week.
